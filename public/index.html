@@ -7,27 +7,85 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method='POST' action='/tweets'>
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id='tweets'>
+        <article>
+          <header>
+            <img/>
+            <h2>Kyle</h2>
+            <p>@Kyle</p>
+          </header>
+          <p>1</p>
+          <footer>10 days ago</footer>
+        </article>
+        <article>
+          <header>
+            <img/>
+            <h2>Nathan</h2>
+            <p>@Nathan</p>
+          </header>
+          <p>2</p>
+          <footer>10 days ago</footer>
+        </article>
+        <article>
+          <header>
+            <img/>
+            <h2>Liam</h2>
+            <p>@Liam</p>
+          </header>
+          <p>3</p>
+          <footer>10 days ago</footer>
+        </article>
+        <article>
+          <header>
+            <img/>
+            <h2>Jacob</h2>
+            <p>@Jacob</p>
+          </header>
+          <p>4</p>
+          <footer>10 days ago</footer>
+        </article>
+        <article>
+          <header>
+            <img/>
+            <h2>Skittles</h2>
+            <p>@Skittles</p>
+          </header>
+          <p>5</p>
+          <footer>10 days ago</footer>
+        </article>
+      </section>
     </main>
-
   </body>
 </html>
