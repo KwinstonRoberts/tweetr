@@ -1,0 +1,44 @@
+#tweets{
+	background-color: white;	
+}
+
+article{
+	border-radius:5px;
+	border:1px solid #ddd;
+	margin-bottom: 20px;
+}
+
+article>p{
+	background-color: white;
+	margin:0;
+}
+
+#tweets img{
+	width:60px;
+	height:60px;
+	padding:10px;
+}
+
+header *{
+	float:left;
+	line-height: 40px
+}
+header p{
+	float:right;
+} 
+
+article header{
+	overflow: auto;
+	background-color: #eee;
+}
+
+#tweets h2, #tweets p{
+	margin:0;
+	padding:10px;
+	border:none;
+}
+
+article footer{
+	border-top:1px solid #ddd;
+	padding:5px;
+}
