@@ -20,6 +20,14 @@ body {
   background-color: #eee;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+body *{
+	  font-family: 'Roboto Condensed', sans-serif;
+}
+
+main{
+	width:450px;
+	margin-left:25%;
+	background-color: white;
+	margin-top: 140px;
+	padding:15px;
+}
