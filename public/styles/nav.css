@@ -9,6 +9,7 @@ nav{
 #nav-bar *{
 	float: left;
 	margin-left: 2em;
+	z-index:1;
 }
 
 #nav-bar .header{
@@ -22,4 +23,21 @@ nav{
 #nav-bar .logo{
 	width: 80px;
 	height:auto;
+}
+
+#nav-bar button{
+	background-color: #ddffff;
+	color:#55aaaa;
+	border: 1px solid black;
+	outline:none;
+	border-radius: 5px;
+	margin-top:20px;
+	margin-right: 2em;
+	padding:10px 20px;
+	float:right;
+}
+
+#nav-bar button:hover{
+	background-color: white;
+	color:black;
 }
