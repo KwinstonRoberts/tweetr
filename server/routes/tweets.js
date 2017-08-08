@@ -11,6 +11,7 @@ module.exports = function(DataHelpers) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
+        console.log(err);
       } else {
         res.json(tweets);
       }
