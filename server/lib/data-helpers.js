@@ -14,7 +14,6 @@ module.exports = function makeDataHelpers(db) {
         callback(null, true);
       });
     },
-
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
       simulateDelay(() => {
@@ -23,6 +22,35 @@ module.exports = function makeDataHelpers(db) {
             return callback(err);
           }
           callback(null, array);
+        });
+      });
+    },
+    likeTweet: function(name,liked,callback) {
+      simulateDelay(() => {
+        console.log(liked);
+
+          db.collection("tweets").find({'user.name':name}).toArray((err,array)=>{
+            if (err){
+            return callback(err);
+            }
+
+            if(liked){
+              db.collection("tweets").update(
+                {'user.name':name},
+                {$inc:{
+                  'liked':1
+                }}
+              )
+            }else if(!liked){
+              db.collection("tweets").update(
+                {'user.name':name},
+                {$inc:{
+                  'liked':-1
+                }}
+              )
+            }
+
+          callback(null, array[0]);
         });
       });
     }

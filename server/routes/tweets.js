@@ -30,7 +30,8 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      liked: 0
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -41,7 +42,16 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+  tweetsRoutes.put("/", function(req, res) {
+     DataHelpers.likeTweet(req.body.name, req.body.liked, function(err,tweet){
+       if(err){
+         res.status(500).json({error:err.message});
+       }else{
+         res.json(tweet);
+       }
+     });
+   });
+
 
   return tweetsRoutes;
-
 }
