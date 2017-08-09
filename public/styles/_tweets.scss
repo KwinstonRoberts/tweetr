@@ -1,0 +1,69 @@
+/* main: layout.scss*/
+
+#tweets{
+	background-color: white;
+	img{
+		@include set-size(80px,auto);
+		padding:10px;
+	}
+	header{
+		*{
+			float:left;
+			line-height: 60px;
+		}
+		p {float:right;}
+	}
+	h2, p{
+		@include set-box(10px,0);
+		border:none;
+	}
+}
+article{
+	@include set-full-model($_i,20px 10px,$_i,$_i,5px,$base-border #ddd);
+	p {
+		margin:0;
+	}
+	header{
+		overflow: auto;
+		background-color: #eee;
+	}
+	footer{
+		border-top:1px solid #ddd;
+		padding:5px;
+		overflow:auto;
+		button{
+			@include set-all(2px,0,auto,auto,5px, $base-border black,#55aaaa,#ddffff);
+			float:right;
+		}
+		button:hover{
+			@include set-color(black,white);
+		}
+	}
+}
+
+@media(max-width:450px){
+	#tweets{
+		padding:20px;
+		img{
+			@include set-size(auto,80%);
+			@include set-box(10px, 9% 9% 0 9%);
+		}
+		header{
+			*{
+				float:none;
+				text-align:center;
+				line-height:0;
+			}
+			p{
+				height:30px;
+				float:none;
+			}
+		}
+		h2, p{
+			@include set-box(10px,0);
+		}
+	}
+	article{
+		@include set-box(0,0 0 20px 0);
+	}
+}

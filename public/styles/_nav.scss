@@ -1,0 +1,46 @@
+/* main: layout.scss*/
+
+#nav-bar{
+	@include set-size(80px,100%);
+	background-color: #00a087;
+	position: fixed;
+	top:0;
+    *{
+		float: left;
+		z-index:1;
+	}
+	.header{
+		@include set-box(0 10px, $_i 5px $_i 0);
+		line-height:80px;
+		font-size: 2em;
+		color:#e8fdff;
+	}
+	.logo{
+		@include set-full-model(0,0 2em 0 0, auto,80px,0,none);
+	}
+	button{
+		@include set-all(10px 20px,20px 2em 0 0,50%,10%,5px,$base-border black,#55aaaa,#ddffff);
+		outline:none;
+		float:right;
+	}
+	button:hover{
+		@include set-color(black,white)
+	}
+}
+
+@media(max-width:450px){
+	#nav-bar{
+		.header{
+			@include set-box(0 1%, 0 1%);
+
+			font-size: 2em;
+		}
+		.logo{
+			@include set-full-model(0,10px 2% 0 2%, auto,60px,0,none);
+		}
+		button{
+			@include set-full-model(2% 2%,20px 1% 0 1%,46%,38%,5px,$base-border none);
+			float:left;
+		}
+	}
+}

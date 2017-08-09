@@ -1,33 +1,63 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+Error: Invalid CSS after "a": expected "{", was ""
+        on line 28 of /home/kyle/lighthouse/week3day1/tweetr/public/styles/_nav.scss
+        from line 49 of /home/kyle/lighthouse/week3day1/tweetr/public/styles/layout.scss
 
-/*
- * Global layout stuff
- */
+23: 		float:right;
+24: 		:hover{@include set-color(black,white)}
+25: 	}
+26: }
+27: a
 
-body {
-  margin: 0;
-  color: #244751;
-  background-color: #eee;
-}
-
-body *{
-	  font-family: 'Roboto Condensed', sans-serif;
-}
-
-main{
-	width:450px;
-	margin-left:25%;
-	background-color: white;
-	margin-top: 140px;
-	padding:2px;
-}
+Backtrace:
+/home/kyle/lighthouse/week3day1/tweetr/public/styles/_nav.scss:28
+/home/kyle/lighthouse/week3day1/tweetr/public/styles/layout.scss:49
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1203:in `tok!'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:677:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:670:in `ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:696:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:137:in `stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:41:in `parse'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:414:in `_to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:321:in `to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:391:in `run'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"a\": expected \"{\", was \"\"\A         on line 28 of /home/kyle/lighthouse/week3day1/tweetr/public/styles/_nav.scss\A         from line 49 of /home/kyle/lighthouse/week3day1/tweetr/public/styles/layout.scss\A \A 23: 		float:right;\A 24: 		:hover{@include set-color(black,white)}\A 25: 	}\A 26: }\A 27: a"; }
