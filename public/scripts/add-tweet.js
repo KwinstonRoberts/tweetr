@@ -32,7 +32,7 @@ $(document).ready(function(){
                 <p>${d[x].user.handle}</p>
               </header>
               <p>${d[x].content.text}</p>
-              <footer>${Math.floor((date.getTime() - d[x].created_at)/1000/60/60/24/365)} year(s) ago <b class='hidden invalid'> ${d.liked} likes </b> <button data-liked=true>Like</button></footer>
+              <footer>${Math.floor((date.getTime() - d[x].created_at)/1000/60/60/24/365)} year(s) ago  <button data-liked=true>Like</button></footer>
             </article>`);
           }
           message.val('');
