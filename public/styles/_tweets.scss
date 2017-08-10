@@ -41,7 +41,7 @@ article{
 	}
 }
 
-@media(max-width:450px){
+@media(max-width:480px){
 	#tweets{
 		padding:20px;
 		img{
@@ -53,10 +53,74 @@ article{
 				float:none;
 				text-align:center;
 				line-height:0;
+				white-space: nowrap;
+			  overflow: hidden;
+			  text-overflow: ellipsis;
 			}
 			p{
 				height:30px;
 				float:none;
+			}
+		}
+		h2, p{
+			@include set-box(10px,0);
+		}
+	}
+	article{
+		@include set-box(0,0 0 20px 0);
+	}
+}
+
+@media(min-width:481px) and (max-width:700px){
+	#tweets{
+		img{
+			@include set-size(auto,40%);
+			@include set-box(10px, 9% 30% 0 30%);
+		}
+		header{
+			*{
+				float:left;
+				text-align:left;
+				text-overflow: ellipsis;
+			}
+			h2{
+				text-align:center;
+				float:left;
+			}
+			p{
+				text-align:center;
+				float:right;
+			}
+		}
+		h2, p{
+			@include set-box(10px,0);
+		}
+	}
+	article{
+		@include set-box(0,0 0 20px 0);
+	}
+}
+@media(min-width:701px) and (max-width:960px){
+	#tweets{
+		img{
+			@include set-box(10px, 10px 0 0 5%);
+		}
+		header{
+			*{
+				float:left;
+				text-align:left;
+				text-overflow: ellipsis;
+				line-height: 50px;
+			}
+			h2{
+				text-align:center;
+				float:left;
+				line-height: 75px;
+			}
+			p{
+				text-align:left;
+				padding: 0 50% 0 7%;
+				float:left;
 			}
 		}
 		h2, p{

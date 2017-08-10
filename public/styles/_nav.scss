@@ -19,7 +19,7 @@
 		@include set-full-model(0,0 2em 0 0, auto,80px,0,none);
 	}
 	button{
-		@include set-all(10px 20px,20px 2em 0 0,50%,10%,5px,$base-border black,#55aaaa,#ddffff);
+		@include set-all(10px 20px,20px 2em 0 0,40px,20%,5px,$base-border black,#55aaaa,#ddffff);
 		outline:none;
 		float:right;
 	}
@@ -28,7 +28,7 @@
 	}
 }
 
-@media(max-width:450px){
+@media(max-width:480px){
 	#nav-bar{
 		.header{
 			@include set-box(0 1%, 0 1%);
@@ -39,8 +39,19 @@
 			@include set-full-model(0,10px 2% 0 2%, auto,60px,0,none);
 		}
 		button{
-			@include set-full-model(2% 2%,20px 1% 0 1%,46%,38%,5px,$base-border none);
-			float:left;
+			@include set-full-model(0,20px 1% 0 1%,40px,30%,5px,$base-border none);
+		}
+	}
+}
+
+@media(min-width:481px) and (max-width:700px){
+	#nav-bar{
+
+		.logo{
+			@include set-full-model(0,10px 2em 0 2%, auto,60px,0,none);
+		}
+		button{
+			@include set-full-model(10px 2%,20px 2em 0 1%,40px,38%,5px,$base-border none);
 		}
 	}
 }
