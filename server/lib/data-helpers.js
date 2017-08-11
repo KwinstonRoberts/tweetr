@@ -27,7 +27,6 @@ module.exports = function makeDataHelpers(db) {
     },
     likeTweet: function(name,liked,callback) {
       simulateDelay(() => {
-        console.log(liked);
 
           db.collection("tweets").find({'user.name':name}).toArray((err,array)=>{
             if (err){
@@ -41,7 +40,7 @@ module.exports = function makeDataHelpers(db) {
                   'liked':1
                 }}
               )
-            }else if(!liked){
+            }else{
               db.collection("tweets").update(
                 {'user.name':name},
                 {$inc:{
