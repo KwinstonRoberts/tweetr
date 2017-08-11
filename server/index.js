@@ -8,16 +8,11 @@ const express       = require("express");
 const bodyParser    = require("body-parser");
 const cookieSession = require('cookie-session');
 const bcrypt        = require('bcrypt');
-var methodOverride = require('method-override');
-
 const app           = express();
 
-app.use(methodOverride('X-HTTP-Method-Override'))
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
-
-//configure cookie hashing
 app.use(cookieSession({
   name: 'user_id',
   keys : ['key1','key2'],
@@ -61,6 +56,9 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
 	// Mount the tweets routes at the "/tweets" path prefix:
 
+
+
+	app.use("/tweets", tweetsRoutes);
 
 
   app.listen(process.env.PORT || PORT, () => {

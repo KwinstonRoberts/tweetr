@@ -24,34 +24,6 @@ module.exports = function makeDataHelpers(db) {
           callback(null, array);
         });
       });
-    },
-    likeTweet: function(name,liked,callback) {
-      simulateDelay(() => {
-
-          db.collection("tweets").find({'user.name':name}).toArray((err,array)=>{
-            if (err){
-            return callback(err);
-            }
-
-            if(liked){
-              db.collection("tweets").update(
-                {'user.name':name},
-                {$inc:{
-                  'liked':1
-                }}
-              )
-            }else{
-              db.collection("tweets").update(
-                {'user.name':name},
-                {$inc:{
-                  'liked':-1
-                }}
-              )
-            }
-
-          callback(null, array[0]);
-        });
-      });
     }
   }
 }
