@@ -13,7 +13,10 @@
             if(data.cookie.user_id){
               $('.userform').addClass('hidden');
               $('#logout').removeClass('hidden');
-
+            }):
+          });
+        });
+      });
       function addTweet(){
         var focused = false;
         $('nav').on('click','button',function(e){
@@ -59,4 +62,4 @@
                    </article>`);
           }
       }
-  };
+  }
