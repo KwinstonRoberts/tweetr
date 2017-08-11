@@ -3,16 +3,15 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(function(){
   var loadTweets = function(){
     $.get('/tweets',function(data){
       renderTweets(data.sort(function(a,b){
-        return b.created_at - a.created_at;
+        return b.created_at - a.created_at
       }));
       });
   }();
-
-
 
   function renderTweets(tweets){
     for(x in tweets){
