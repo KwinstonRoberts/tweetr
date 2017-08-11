@@ -6,39 +6,17 @@
 $(document).ready(function(){
   var loadTweets = function(){
     $.get('/tweets',function(data){
-      renderTweets(data, function(){
-          $('#tweets>article>footer>button').on('click', function(e){
-            var hasBeenLiked = $(e.target).text() === 'Like';
-            e.preventDefault();
-            $.ajax({
-              url: '/tweets',
-              type: 'PUT',
-              data: `liked=${hasBeenLiked}&name=${$(this).closest('article').find('header').find('h2').text()}`,
-              success: function(data) {
-                if($(e.target).data('liked')){
-                  $(e.target).text(`${data.liked} Likes`);
-                  $(e.target).data('liked',false);
-                }else{
-                  $(e.target).text('Like');
-                  $(e.target).data('liked',true);
-                }
-              },
-              error: function(err){
-              console.log(err)
-            }
-          });
-        });
+      renderTweets(data);
       });
     });
   }();
 
 
 
-  function renderTweets(tweets, cb){
+  function renderTweets(tweets){
     for(x in tweets){
        $('#tweets').append(createTweetElement(tweets[x]));
     }
-    cb();
   }
 
   function createTweetElement(data){
@@ -56,7 +34,7 @@ $(document).ready(function(){
                 <p>${escape(user.handle)}</p>
               </header>
               <p>${escape(data.content.text)}</p>
-              <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <button data-liked=true>Like</button></footer>
+              <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago </footer>
             </article>`
     }
 });
