@@ -39,7 +39,6 @@
             $.post('/tweets', $(this).serialize() ,function(){
               $.get('/tweets', function(data){
                 $('#tweets').empty();
-
 -                renderTweets(data);
                 });
               });
@@ -50,7 +49,6 @@
       function renderTweets(tweets){
         var date = new Date();
         for(x in tweets){
-          console.log(tweets[x])
            $('#tweets').append(`<article>
                      <header>
                        <img src='${escape(tweets[x].user.avatars.large)}'/>
@@ -62,4 +60,4 @@
                    </article>`);
           }
       }
-    });
+  });
