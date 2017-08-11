@@ -32,7 +32,7 @@
             $.post('/tweets', $(this).serialize() ,function(){
               $.get('/tweets', function(data){
                 $('#tweets').empty();
-                var date = new Date();
+
 -                renderTweets(data);
                 });
               });
@@ -41,16 +41,17 @@
       }
 
       function renderTweets(tweets){
+        var date = new Date();
         for(x in tweets){
-           $('#tweets').append(`
-                <article>
+          console.log(tweets[x])
+           $('#tweets').append(`<article>
                      <header>
-                       <img src='${escape(user.avatars.large)}'/>
-                       <h2>${escape(user.name)}</h2>
-                       <p>${escape(user.handle)}</p>
+                       <img src='${escape(tweets[x].user.avatars.large)}'/>
+                       <h2>${escape(tweets[x].user.name)}</h2>
+                       <p>${escape(tweets[x].user.handle)}</p>
                      </header>
-                     <p>${escape(data.content.text)}</p>
-                     <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24)} day(s) ago <i class='fa fa-heart'></i><i class='fa fa-retweet'></i><i class='fa fa-flag'></i></footer>
+                     <p>${escape(tweets[x].content.text)}</p>
+                     <footer>${Math.floor((date.getTime() - tweets[x].created_at)/1000/60/60/24)} day(s) ago <i class='fa fa-heart'></i><i class='fa fa-retweet'></i><i class='fa fa-flag'></i></footer>
                    </article>`);
           }
       }
