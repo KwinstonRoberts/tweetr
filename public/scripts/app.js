@@ -3,13 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$.getScript('/scripts/like-tweet.js', function(){
   $.getScript('/scripts/add-tweet.js', function(){
     $(document).ready(function(){
       var loadTweets = function(){
         $.get('/tweets',function(data){
           renderTweets(data.tweets, function(){
-            likeTweet();
             addTweet();
             console.log(data.cookie);
             if(data.cookie.user_id){
@@ -54,4 +52,3 @@ $.getScript('/scripts/like-tweet.js', function(){
         }
     });
   });
-});
