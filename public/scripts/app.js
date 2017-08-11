@@ -6,13 +6,8 @@
     $(document).ready(function(){
       var loadTweets = function(){
         $.get('/tweets',function(data){
-          renderTweets(data.tweets, function(){
+          renderTweets(data, function(){
             addTweet();
-            console.log(data.cookie);
-            if(data.cookie.user_id){
-              $('.userform').addClass('hidden');
-              $('#logout').removeClass('hidden');
-            }
           });
         });
       }
