@@ -31,12 +31,8 @@ article{
 		border-top:1px solid #ddd;
 		padding:5px;
 		overflow:auto;
-		button{
-			@include set-all(2px,0,auto,auto,5px, $base-border black,#55aaaa,#ddffff);
+		i{
 			float:right;
-		}
-		button:hover{
-			@include set-color(black,white);
 		}
 	}
 }
