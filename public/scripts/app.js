@@ -8,7 +8,6 @@ $(document).ready(function(){
     $.get('/tweets',function(data){
       renderTweets(data);
       });
-    });
   }();
 
 
