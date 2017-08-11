@@ -40,7 +40,7 @@ $.getScript('/scripts/like-tweet.js', function(){
                     <p>${escape(user.handle)}</p>
                   </header>
                   <p>${escape(data.content.text)}</p>
-                  <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <button data-liked=true>Like</button></footer>
+                  <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <i class='fa fa-flag'></i><i class='fa fa-thumbs-up'></i><i class='fa fa-retweet'></i></footer>
                 </article>`
         }
     });
