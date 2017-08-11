@@ -6,7 +6,9 @@
 $(document).ready(function(){
   var loadTweets = function(){
     $.get('/tweets',function(data){
-      renderTweets(data);
+      renderTweets(data.sort(function(a,b){
+        return b.created_at - a.created_at;
+      }));
       });
   }();
 
