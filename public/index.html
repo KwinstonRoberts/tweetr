@@ -18,6 +18,7 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/register.js"></script>
     <script type="text/javascript" src="/scripts/like-tweet.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/add-tweet.js"></script>
@@ -31,6 +32,14 @@
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
       <button>Compose</button>
+
+        <input class='userform' type='text' name='username'/>
+        <input class='userform' type='password' name='password'/>
+        <input class='userform' id='register' type='submit' value='Register'>
+        <input class='userform' id='login' type='submit' value='Login'>
+        <input id='logout' class='hidden' type='submit' value='Logout'>
+
+      </form>
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">

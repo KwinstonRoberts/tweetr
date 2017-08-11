@@ -13,7 +13,7 @@ module.exports = function(DataHelpers) {
         res.status(500).json({ error: err.message });
         console.log(err);
       } else {
-        res.json(tweets);
+        res.json({'tweets':tweets,'cookie':req.session});
       }
     });
   });

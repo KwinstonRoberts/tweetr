@@ -26,6 +26,18 @@
 	button:hover{
 		@include set-color(black,white)
 	}
+	input{
+		outline:none;
+		@include set-full-model(5px,25px 2% 0 1%, 30px, 10%,10px,1px solid white)
+		float:left;
+		text-align: center;
+	}
+	#register, #login{
+		width: 40%;
+	}
+}
+.hidden{
+	display:none;
 }
 
 @media(max-width:480px){

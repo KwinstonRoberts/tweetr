@@ -45,6 +45,9 @@ article:hover{
 	i{
 		visibility: visible;
 	}
+	i:hover{
+		color: #00a087;
+	}
 }
 
 @media(max-width:480px){

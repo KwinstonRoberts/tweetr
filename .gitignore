@@ -1,8 +1,0 @@
-node_modules/
-data-files/
-.env
-.DS_Store
-*.scss
-*.map
-font-awesome/less
-font-awesome/sass
