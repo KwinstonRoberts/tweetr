@@ -3,12 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+  $.getScript('/scripts/add-tweet.js', function(){
     $(document).ready(function(){
       var loadTweets = function(){
         $.get('/tweets',function(data){
-            renderTweets(data);
-          });
-        }();
+          renderTweets(data.tweets, function(){
+            addTweet();
+            console.log(data.cookie);
+            if(data.cookie.user_id){
+              $('.userform').addClass('hidden');
+              $('#logout').removeClass('hidden');
 
       function addTweet(){
         var focused = false;
