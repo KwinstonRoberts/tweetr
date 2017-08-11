@@ -4,3 +4,4 @@ node_modules/
 **/*.css.map
 data-files/
 npm-debug.log
+.env
