@@ -8,11 +8,16 @@ const express       = require("express");
 const bodyParser    = require("body-parser");
 const cookieSession = require('cookie-session');
 const bcrypt        = require('bcrypt');
+var methodOverride = require('method-override');
+
 const app           = express();
 
-
+app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+
+//configure cookie hashing
 app.use(cookieSession({
   name: 'user_id',
   keys : ['key1','key2'],
@@ -56,46 +61,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
 	// Mount the tweets routes at the "/tweets" path prefix:
 
-  app.post('/login', function(req,res){
-    db.collection('users').find({'name':req.body.username}).toArray((err,array)=>{
-    bcrypt.compareSync(req.body, array[0].password,function(){
-      if(err)throw err;
-      req.session.user_id = array[0].name;
-      res.redirect('');
-    });
-  });
-});
 
-  app.post('/register', function(req,res){
-    console.log(req.body.password)
-    if(!req.body.password || !req.body.username){
-      db.collection('users').find({'name':req.body.username}).toArray((err,array)=>{
-        if(array.length!==0){
-          res.status(400).send("email exists");
-          throw "error occurred";
-        }
-      });
-      res.status(400).send('empty form field');
-      throw "error occurred";
-    }else{
-      var user = userHelper.generateRandomUser();
-      var newUser = {
-        "name" : req.body.username,
-        "avatars":user.avatars,
-        "handle" : req.body.username.slice(4),
-        "password":bcrypt.hashSync(req.body.password,10)
-      }
-      db.collection('users').insertOne(newUser);
-      req.session.user_id = newUser.name;
-    }
-  })
-
-	app.use("/tweets", tweetsRoutes);
-
-  app.post('/logout', function(req,res){
-    req.session = null;
-    res.redirect('back');
-  });
 
   app.listen(process.env.PORT || PORT, () => {
     console.log("Example app listening on port " + PORT);

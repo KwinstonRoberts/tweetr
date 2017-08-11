@@ -5,21 +5,14 @@
  */
 $.getScript('/scripts/like-tweet.js', function(){
   $.getScript('/scripts/add-tweet.js', function(){
+    $.getScript('/scripts/register.js',function(){
     $(document).ready(function(){
       var loadTweets = function(){
         $.get('/tweets',function(data){
           renderTweets(data.tweets, function(){
             likeTweet();
             addTweet();
-            console.log(data.cookie);
-            if(data.cookie.user_id){
-              $('.userform').addClass('hidden');
-              $('#logout').removeClass('hidden');
-
-            }else{
-              $('.userform').removeClass('hidden');
-              $('#logout').addClass('hidden');
-            }
+        
           });
         });
       }();
@@ -49,9 +42,10 @@ $.getScript('/scripts/like-tweet.js', function(){
                     <p>${escape(user.handle)}</p>
                   </header>
                   <p>${escape(data.content.text)}</p>
-                  <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <i class='fa fa-heart'></i><i class='fa fa-retweet'></i><i class='fa fa-flag'></i></footer>
+                  <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24)} day(s) ago <i class='fa fa-heart'></i><i class='fa fa-retweet'></i><i class='fa fa-flag'></i></footer>
                 </article>`
         }
     });
   });
+});
 });
