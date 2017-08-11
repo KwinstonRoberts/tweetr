@@ -7,6 +7,7 @@
 $(document).ready(function(){
   var loadTweets = function(){
     $.get('/tweets',function(data){
+      console.log('1')
       renderTweets(data.sort(function(a,b){
         return b.created_at - a.created_at
       }));
@@ -15,6 +16,7 @@ $(document).ready(function(){
 
   function renderTweets(tweets){
     for(x in tweets){
+      console.log(tweets[x]);
        $('#tweets').append(createTweetElement(tweets[x]));
     }
   }
