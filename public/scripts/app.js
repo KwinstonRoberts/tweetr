@@ -33,7 +33,7 @@ $(document).ready(function(){
                 <p>${escape(user.handle)}</p>
               </header>
               <p>${escape(data.content.text)}</p>
-              <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <i class='fa-fa-flag'></i><i class="fa fa-retweet"></i><i class="fa fa-thumbs-up"></i></footer>
+              <footer>${Math.floor((date.getTime() - data.created_at)/1000/60/60/24/365)} year(s) ago <i class='fa-fa-flag' aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i></footer>
             </article>`
     }
 });
