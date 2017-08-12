@@ -6,20 +6,11 @@ require('dotenv').config();
 const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
-const cookieSession = require('cookie-session');
-const bcrypt        = require('bcrypt');
 const app           = express();
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(cookieSession({
-  name: 'user_id',
-  keys : ['key1','key2'],
-  maxAge: 24 * 60 * 60 * 1000,
-}));
-app.use(bodyParser.json());
-
 
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -38,7 +29,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
 
   const DataHelpers = require("./lib/data-helpers.js")(db);
-  const userHelper    = require("./lib/util/user-helper.js");
 
 
 
@@ -55,9 +45,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 	const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
 	// Mount the tweets routes at the "/tweets" path prefix:
-
-
-
 	app.use("/tweets", tweetsRoutes);
 
 

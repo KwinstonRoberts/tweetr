@@ -11,7 +11,7 @@ $base-border: 1px solid;
 }
 @mixin set-border($radius, $border){
 	border-radius: $radius;
-	border:$border; 
+	border:$border;
 }
 @mixin set-color($font, $bg){
 	background-color: $bg;
