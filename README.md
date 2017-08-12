@@ -9,4 +9,4 @@ heroku link- www.tweetr-kyle.herokuapp.com
 ## Screenshots of the website
 
 !["Site at full width"](https://github.com/KwinstonRoberts/tweetr/blob/master/docs/full-width.png)
-!["Site on mobile"](https://github.com/KwinstonRoberts/tweetr/docs/blob/master/docs/mobile.png)
+!["Site on mobile"](https://github.com/KwinstonRoberts/tweetr/blob/master/docs/mobile.png)
