@@ -6,7 +6,7 @@ The site runs in various screen sizes and is set to run in the Heroku environmen
 
 heroku link- www.tweetr-kyle.herokuapp.com
 
-##Screenshots of the website
+#Screenshots of the website
 
-!["Site at full width"](https://github.com/KwinstonRoberts/tweetr/docs/full-width.png)
-!["Site on mobile](https://github.com/KwinstonRoberts/tweetr/docs/mobile.png)
+!["Site at full width"](https://github.com/KwinstonRoberts/tweetr/blob/master/docs/full-width.png)
+!["Site on mobile](https://github.com/KwinstonRoberts/tweetr/docs/blob/master/mobile.png)
