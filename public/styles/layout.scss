@@ -1,0 +1,64 @@
+@fa-font-path:  "../vendor/";
+$_i: inherit;
+$base-border: 1px solid;
+@mixin set-box($padding,$margin){
+	padding:$padding;
+	margin:$margin;
+}
+@mixin set-size($height, $width){
+	height:$height;
+	width:$width;
+}
+@mixin set-border($radius, $border){
+	border-radius: $radius;
+	border:$border; 
+}
+@mixin set-color($font, $bg){
+	background-color: $bg;
+	color:$font;
+}
+@mixin set-full-model($pad,$margin,$height,$width,$rad,$border){
+	@include set-box($pad,$margin);
+	@include set-size($height,$width);
+	@include set-border($rad,$border);
+}
+@mixin set-all($pad,$margin,$height,$width,$rad,$border, $font, $bg){
+	@include set-full-model($pad,$margin,$height,$width,$rad,$border);
+	@include set-color($font,$bg);
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: $_i;
+}
+
+body {
+  @include set-box($_i, 0);
+  @include set-color(#244751,#eee);
+ *{
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}
+
+main{
+	@include set-all(2% , 140px 28% 0 , auto , 40% , 0 , none , black , white);
+}
+
+@media(max-width:480px){
+	main{
+		@include set-full-model(2%,140px 5% 0,auto,90%,0,none);
+	}
+}
+
+@media(min-width:481px) and (max-width:700px){
+	main{
+		@include set-full-model(2%,140px 20% 0,auto,60%,0,none);
+	}
+}
+
+
+@import 'nav';
+@import 'new-tweet';
+@import 'tweets';

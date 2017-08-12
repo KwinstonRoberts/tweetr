@@ -1,7 +1,7 @@
 node_modules/
-**/*.scss
+vendor/font-awesome/**/*.scss
 **/*.less
-**/*.css.map
 data-files/
 npm-debug.log
 .env
+.DS_Store
