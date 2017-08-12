@@ -8,3 +8,4 @@ heroku link- www.tweetr-kyle.herokuapp.com
 
 ##Screenshots of the website
 
+['Site at full width']["tweetr/docs/Screenshot from 2017-08-10 21-19-00.png"]
