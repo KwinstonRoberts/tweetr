@@ -33,7 +33,20 @@ article{
 		overflow:auto;
 		i{
 			float:right;
+			visibility: hidden;
+			padding:1px;
 		}
+		i:hover{
+			color:#00a087;
+		}
+	}
+}
+article:hover{
+	i{
+		visibility: visible;
+	}
+	header{
+		background-color: #ccc;
 	}
 }
 
